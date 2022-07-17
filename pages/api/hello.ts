@@ -14,10 +14,26 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
 
-  logger.info('hello world')
+  //onlypino.info('hello world')
 
-  const child = logger.child({ a: 'property' })
-  child.info('hello child!')
+
+  const data = {
+    request: {
+      method: req.method,
+      url: req.url
+    },
+    response: {
+      status: res.statusCode
+    }
+  }
+
+  // Logging to pino-logflare
+
+  logger.info(data, "Handled response. Logged with pino-logflare.")
+
+
+  //const child = onlypino.child({ a: 'property' })
+  // child.info('hello child!')
   res.status(200).json({ name: 'John Doe' })
 
 }
