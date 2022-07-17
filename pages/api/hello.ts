@@ -1,7 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import logger from '../../logger/logger'
 
-const logger = require('pino')()
+const onlypino = require('pino')()
 
 
 type Data = {
