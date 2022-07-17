@@ -20,12 +20,18 @@ export default function handler(
   const data = {
     request: {
       method: req.method,
-      url: req.url
+      url: req.url,
+      data: req.body,
     },
     response: {
       status: res.statusCode
     }
   }
+
+  //const data = {
+  //  hi: "hello world",
+  //}
+
 
   // Logging to pino-logflare
 
