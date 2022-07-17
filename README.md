@@ -4,4 +4,5 @@
 *bolded*
 
 - [ ] ok
+- [x] ok
 
