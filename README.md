@@ -1,7 +1,7 @@
 #POC for log integration of nexts and logflare
 ---
 
-*bolded*
+**bolded**
 
 - [ ] ok
 - [x] ok
