@@ -33,3 +33,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# keys
+test-*.json
+
+# local files
+package-lock.json
+yarn.lock

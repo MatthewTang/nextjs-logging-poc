@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/logging": "^10.1.1",
     "next": "12.2.2",
     "pino": "^8.1.0",
     "pino-logflare": "^0.3.12",
+    "pino-multi-stream": "^6.0.0",
+    "pino-stackdriver": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
