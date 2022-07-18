@@ -20,9 +20,8 @@ const logger = pinoms({ streams: [{ stream: writeStream }] })
 // using pinco/ pinco-logflare
 // log some events logger.info('Informational message')
 //logger.error(new Error('things got bad'), 'error message')
-//import type { NextApiRequest, NextApiResponse } from 'next'
-// import logger from '../../logger/logger'
-//const onlypino = require('pino')()
+import logflarelogger from '../../logger/logger'
+const onlypino = require('pino')()
 
 
 type Data = {
@@ -95,6 +94,8 @@ export default function handler(
 
   logger.info(data, "Handled response. Logged with pino-logflare.")
   //console.log(credentials);
+  logflarelogger.info(credentials, "logflare");
+  onlypino.info(credentials, "only pino")
   //logger.info("hello");
   //console.log(data);
   //quickstart();
