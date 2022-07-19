@@ -7,7 +7,7 @@ const stackdriver = require('pino-stackdriver')
 const pinoms = require('pino-multi-stream')
 // create the stackdriver destination stream
 const credentials = {
-  "private_key": process.env.GCP_PRIVATE_KEY_STRING!,
+  "private_key": process.env.GCP_PRIVATE_KEY_STRING!.replace(/\\n/g, '\n'),
   "client_email": process.env.GCP_CLIENT_EMAIL!,
 }
 const projectId = 'test-202116'
