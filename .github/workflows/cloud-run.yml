@@ -48,4 +48,8 @@ jobs:
           --platform managed \
           --region $CLOUD_RUN_REGION \
           --allow-unauthenticated \
-          --quiet
+          --quiet \
+          --set-env-vars `LOGFLARE_API_KEY=${{ LOGFLARE_API_KEY }}` \
+          --set-env-vars `LOGFLARE_SOURCE_TOKEN=${{ LOGFLARE_SOURCE_TOKEN }}` \
+          --set-env-vars `GCP_CLIENT_EMAIL=${{ GCP_CLIENT_EMAIL }}` \
+          --set-env-vars `GCP_PRIVATE_KEY_STRING=${{ GCP_PRIVATE_KEY_STRING }}` \
