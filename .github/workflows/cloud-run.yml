@@ -12,6 +12,10 @@ env:
   CLOUD_RUN_REGION: asia-northeast1
   # project-name but it can be anything you want
   REPO_NAME: nextjs-logging-poc
+  LOGFLARE_API_KEY: ${{ LOGFLARE_API_KEY }} 
+  LOGFLARE_SOURCE_TOKEN: ${{ LOGFLARE_SOURCE_TOKEN }} 
+  GCP_CLIENT_EMAIL: ${{ GCP_CLIENT_EMAIL }} 
+  GCP_PRIVATE_KEY_STRING: ${{ GCP_PRIVATE_KEY_STRING }}
 
 jobs:
   build-and-deploy:
@@ -49,7 +53,7 @@ jobs:
           --region $CLOUD_RUN_REGION \
           --allow-unauthenticated \
           --quiet \
-          --set-env-vars `LOGFLARE_API_KEY=${{ LOGFLARE_API_KEY }}` \
-          --set-env-vars `LOGFLARE_SOURCE_TOKEN=${{ LOGFLARE_SOURCE_TOKEN }}` \
-          --set-env-vars `GCP_CLIENT_EMAIL=${{ GCP_CLIENT_EMAIL }}` \
-          --set-env-vars `GCP_PRIVATE_KEY_STRING=${{ GCP_PRIVATE_KEY_STRING }}` \
+          --set-env-vars "LOGFLARE_API_KEY=$LOGFLARE_API_KEY" \
+          --set-env-vars "LOGFLARE_SOURCE_TOKEN=$LOGFLARE_SOURCE_TOKEN" \
+          --set-env-vars "GCP_CLIENT_EMAIL=$GCP_CLIENT_EMAIL" \
+          --set-env-vars "GCP_PRIVATE_KEY_STRING=$GCP_PRIVATE_KEY_STRING" \
