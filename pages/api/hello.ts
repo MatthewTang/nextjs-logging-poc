@@ -92,7 +92,7 @@ export default function handler(
 
   // Logging to pino-logflare
 
-  logger.info(data, "Handled response. Logged with pino-logflare.")
+  logger.info(data, "Handled response. Logged with pino-stackdriver")
   //console.log(credentials);
   logflarelogger.info(credentials, "logflare");
   onlypino.info(credentials, "only pino")
